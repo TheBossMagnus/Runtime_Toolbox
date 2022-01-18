@@ -9,7 +9,7 @@ If ( Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86) - 14
     Write-Host -f green "last version of c++ 2015-2022 x86 runtime is installed"} 
     else {
  if (Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86)” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
-   Write-host -f Dark Yellow "c++ 2015-2022 x86 runtime is installed, but need to be updated" }
+   Write-host -f DarkYellow "c++ 2015-2022 x86 runtime is installed, but need to be updated" }
   else  {Write-Host -f red "c++ 2015-2022 x86 runtime isn't installed" }
 }
 Pause
