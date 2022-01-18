@@ -1,3 +1,4 @@
+$echo 
 #List in a txt witch programs are installated in the pc
 Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion | Format-Table –AutoSize > "$env:userprofile\AppData\Local\Temp\list.txt"
 
@@ -5,10 +6,10 @@ Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uni
 
 #c++ 2015-2021 x86
 If ( Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86) - 14.30.30708” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
-    Write-Output  "last version of c++ 2015-2022 x86 runtime is installed"} 
+    Write-Host -f green "last version of c++ 2015-2022 x86 runtime is installed"} 
     else {
  if (Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86)” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
-   Write-Output "c++ 2015-2022 x86 runtime is installed, but need to be updated" }
-  else  {Write-Output "c++ 2015-2022 x86 runtime isn't installed" }
+   Write-host -f Dark Yellow "c++ 2015-2022 x86 runtime is installed, but need to be updated" }
+  else  {Write-Host -f red "c++ 2015-2022 x86 runtime isn't installed" }
 }
 Pause
