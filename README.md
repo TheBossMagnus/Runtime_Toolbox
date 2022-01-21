@@ -1,3 +1,4 @@
-# Runtime toolbox
-- A simple and open source tool for install and update runtime.
-- Work in progress no ETA
+# Runtime toolbox TEST BRANCH
+- Only test for future beta and/or stable release
+- Maybe don't work or have bug and issues
+- Not intended for final user
