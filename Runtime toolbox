@@ -4,12 +4,21 @@ Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uni
 
 #show witch runtime are not installated
 
-#c++ 2015-2021 x86
-If ( Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86) - 14.30.30708” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
+#2015-2021 x86
+If ( Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86)” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
     Write-Host -f green "last version of c++ 2015-2022 x86 runtime is installed"} 
-    else {
- if (Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86)” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
-   Write-host -f DarkYellow "c++ 2015-2022 x86 runtime is installed, but need to be updated" }
-  else  {Write-Host -f red "c++ 2015-2022 x86 runtime isn't installed" }
-}
+  
+     
+  else  {Write-Host -f red "c++ 2015-2022 x86 runtime isn't installed"
+  $Download = Read-Host "Do you want to download it? Y=yes N=no"}
+     If ($download -eq "Y"){
+      mkdir "Runtime Toolbox"
+      Cd "Runtime Toolbox"
+      Invoke-WebRequest https://aka.ms/vs/17/release/vc_redist.x86.exe -OutFile "VCredist.X86"
+      Echo "RUN EVERY FILES IN THIS FOLDER ONE BY ONE"
+      Start "$env:USERPROFILE\Downloads\Runtime Toolbox"
+      }
+
 Pause
+
+
