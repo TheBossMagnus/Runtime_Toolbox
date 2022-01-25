@@ -25,3 +25,5 @@ x64: https://download.microsoft.com/download/A/8/0/A80747C3-41BD-45DF-B505-E9710
 c++ 2005-8.0.50727.6195 (out of support- legalcy)
 x86: https://www.microsoft.com/en-in/download/confirmation.aspx?id=26347&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 x64: Not avaiable
+
+
