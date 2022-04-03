@@ -1,4 +1,4 @@
-$echo 
+#intro 
 Write-Host -f DarkYellow "
                                          welcome in 
 ______               _    _                    _____              _  _                 
@@ -8,39 +8,48 @@ ______               _    _                    _____              _  _
 | |\ \| |_| || | | || |_ | || | | | | ||  __/   | || (_) || (_) || || |_) || (_) |>  < 
 \_| \_|\__,_||_| |_| \__||_||_| |_| |_| \___|   \_/ \___/  \___/ |_||_.__/  \___//_/\_\ by THEBOSSMAGNUS
 
-
+						This program will install all common used runtime
 "
+#chose if run y/N
+$RUN = Read-Host "I do not take any responsibilities for any damage caused by this program. Do you want to run this program? Y=yes N=no"
+If ($RUN -eq "N") {exit} 
+Clear-Host
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted    
+
+#check if winget is intalled
+
+Write-Host "Checking if winget is installed"
 
 
-Write-host -f green "Simple Respond at the question with Y(yes) and N(no) and follow the istructions
-Be sure thath this is the last avaible release in https://github.com/THEBOSSMAGNUS/Runtime_Toolbox                                                                                    
-                                                                                       
-"
+if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
+    'Winget is already Installed, we are aredy to start' # installed
+}  
+else{
+	Write-Host "Winget isn't installed! No problem, automaticly installing it..." # not installed
+	Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
+	$nid = (Get-Process AppInstaller).Id
+	Wait-Process -Id $nid
+	Write-Host Winget Installed, ready to start!
+    
+}
+
+
+#runtime install 
+winget install --id=Microsoft.VC++2015-2022Redist-x86 -e -h --force ; 
+winget install --id=Microsoft.VC++2015-2022Redist-x64 -e -h --force ; 
+winget install --id=Microsoft.VC++2013Redist-x64 -e -h --force ; 
+winget install --id=Microsoft.VC++2013Redist-x86 -e -h --force ;
+winget install --id=Microsoft.VC++2012Redist-x64 -e -h --force ; 
+winget install --id=Microsoft.VC++2012Redist-x86 -e -h --force
+winget install --id=Microsoft.VC++2010Redist-x64 -e -h --force ; 
+winget install --id=Microsoft.VC++2010Redist-x86 -e -h --force ; 
+#winget install --id=Microsoft.VC++2008Redist-x64 -e -h --force ; 
+#winget install --id=Microsoft.VC++2008Redist-x86 -e -h --force ; 
+winget install --id=Microsoft.VC++2005Redist-x86 -e -h --force ; 
+winget install --id=Microsoft.VC++2005Redist-x64 -e -h --force ; 
+winget install --id=Oracle.JavaRuntimeEnvironment -e -h --force ; 
+winget install --id=Microsoft.XNARedist -e -h --force ; 
+
+#done!
+Write-Host Everything is installed, a reboot is suggested! #add rebbot Y/N
 pause
-#List in a txt witch programs are installated in the pc
-Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion | Format-Table –AutoSize > "$env:userprofile\AppData\Local\Temp\list.txt"
-
-#show witch runtime are not installated
-
-#2015-2021 x86
-If ( Select-String -SimpleMatch -Pattern “2015-2022 Redistributable (x86) qwert” -Path "$env:userprofile\AppData\Local\Temp\list.txt" -Quiet ) {
-    Write-Host -f green "last version of c++ 2015-2022 x86 runtime is installed"} 
-  
-     
-  else  {Write-Host -f red "c++ 2015-2022 x86 runtime isn't installed"
-  $Download = Read-Host "Do you want to download it? Y=yes N=no"}
-     If ($download -eq "Y"){
-      mkdir "Runtime Toolbox"
-      Set-Location "Runtime Toolbox"
-      Invoke-WebRequest https://aka.ms/vs/17/release/vc_redist.x86.exe -OutFile "VCredist.X86"
-      Write_otput "run every files in the opened folder"
-      Write-Output "RUN EVERY FILES IN THIS FOLDER ONE BY ONE"> RUN_EVERY_FILES_IN_THIS_FOLDER_ONE_BY_ONE.txt
-      Start-Process "$env:USERPROFILE\Downloads\Runtime Toolbox"
-      }
-
-Pause
-
-
-
-
-
