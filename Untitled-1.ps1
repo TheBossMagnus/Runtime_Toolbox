@@ -68,7 +68,10 @@ winget install --id=Oracle.JavaRuntimeEnvironment -e -h --force ;
 Write-Host "Java 8 runtime envirorment installed" -f green
 
 winget install --id=Microsoft.XNARedist -e -h --force ;
-Write-Host "XNA framework installed" -f green 
+Write-Host "XNA framework installed" -f green
+
+winget install --id=Microsoft.dotNetFramework  -e -g --force;
+Write-Host ".net framework 4.8 installed" -f green
 
 #done/reboot
 Write-Host  
