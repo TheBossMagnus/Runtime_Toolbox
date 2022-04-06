@@ -3,6 +3,6 @@
 - Work in progress 
 - Run the script by pasting in powershell: 
  ```
- https://bit.ly/3ukPmtj
+ iwr -useb https://bit.ly/3ukPmtj | iex
  ```
    or downloading it from release tab
