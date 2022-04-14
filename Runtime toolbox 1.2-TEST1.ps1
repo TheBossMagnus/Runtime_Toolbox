@@ -19,15 +19,15 @@ $RUN = Read-Host "I do not take any responsibilities for any damage caused by th
 If ($RUN -ine "Y") {exit} 
 Clear-Host
 
-#check if Chocolatrey is intalled
+#check if Chocolatey is intalled
 
-Write-Host "Checking if Chocolatrey is installed"
+Write-Host "Checking if Chocolatey is installed"
 
 if (Test-Path C:\ProgramData\chocolatey\choco.exe){
-    'Chocolatrey is already Installed, we are aredy to start' # installed
+    'Chocolatey is already Installed, we are aredy to start' # installed
 }  
 else{
-	Write-Host "Chocolatrey isn't installed! No problem, automaticly installing it..." # not installed
+	Write-Host "Chocolatey isn't installed! No problem, automaticly installing it..." # not installed
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 	Write-Host Chocolatrey Installed, ready to start!    
 }
