@@ -6,10 +6,11 @@
   + c++ 2013
   + c++ 2012
   + c++ 2010
-  + c++ 2008 (disabled by default uncommenti it removing the #) 
+  + c++ 2008 
   + c++ 2005
 * #### Java  
-* #### Xna framework    
+* #### Xna framework
+* #### .Net Framework 4.8    
 
 ## Every program is installed with winget(windows package menager)                                
                                              
