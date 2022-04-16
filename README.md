@@ -3,6 +3,6 @@
 - Work in progress 
 - Run the script by pasting in admin powershell: 
  ```
-iwr -useb https://bit.ly/RuntimeToolbox | iex
+iwr -useb https://bit.ly/RuntimeToolboxps1 | iex
  ```
    or downloading it from release tab
