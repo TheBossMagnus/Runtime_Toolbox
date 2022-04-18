@@ -23,11 +23,11 @@ Clear-Host
 Write-Host -f green "Loading..."
 
 if (Test-Path C:\ProgramData\chocolatey\choco.exe)
- {Clear-Host}  
-else{
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) | Out-Null
-	Clear-Host}
-
+ {}  
+else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+	
+}
+Start-Sleep -Seconds 30
 #runtime install 
 choco install vcredist140 -y | Out-Null
 Write-Host "MSVC 2015-2022 installed" -f green
