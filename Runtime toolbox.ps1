@@ -19,15 +19,13 @@ If ($RUN -ine "Y") {exit}
 Clear-Host
 
 #check if Chocolatey is intalled
-
 Write-Host -f green "Loading..."
-
 if (Test-Path C:\ProgramData\chocolatey\choco.exe)
  {}  
-else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
-	
+else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"	
 }
 Start-Sleep -Seconds 30
+
 #runtime install 
 choco install vcredist140 -y | Out-Null
 Write-Host "MSVC 2015-2022 installed" -f green
