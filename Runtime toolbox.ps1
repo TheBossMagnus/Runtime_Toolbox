@@ -44,7 +44,9 @@ Write-Host "Java 8 runtime envirorment installed" -f green
 choco install xna  -y | Out-Null
 Write-Host "XNA framework installed" -f green
 choco install netfx-4.8  -y | Out-Null
-Write-Host ".net framework 4.8 installed" -f green
+Write-Host ".Net framework 4.8 installed" -f green
+choco install silverlight | Out-Null
+Write-Host "Silverlight installed" -f green
 
 #done/reboot 
 $REBOOT = Read-Host "Everything is installed, a reboot is suggested. Do you want to reboot now? Y=yes N=no"
