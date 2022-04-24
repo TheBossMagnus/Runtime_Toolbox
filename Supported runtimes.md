@@ -10,7 +10,9 @@
   + c++ 2005
 * #### Java  
 * #### Xna framework
-* #### .Net Framework 4.8  
+* #### .Net Framework 
+  + 4.8 
+  + 3.5 
 * #### Silverlight  
 
 ## Every program is installed with winget(windows package menager)                                
