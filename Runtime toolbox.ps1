@@ -45,7 +45,7 @@ choco install xna  -y | Out-Null
 Write-Host "XNA framework installed" -f green
 choco install netfx-4.8  -y | Out-Null
 Write-Host ".Net framework 4.8 installed" -f green
-Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All
+Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All | Out-Null
 Write-Host "Net framework 3.5 installed" -f green
 choco install silverlight | Out-Null
 Write-Host "Silverlight installed" -f green
