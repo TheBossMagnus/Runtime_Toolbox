@@ -16,5 +16,5 @@
 * #### Silverlight  
 * #### Directx 9(Directx 12 preinstalled with windows 10+ and not avible on choco)
 
-## Every program is installed with winget(windows package menager)                                
+## Every program is installed with Choco(Chocolatrey package menager)                                
                                              
