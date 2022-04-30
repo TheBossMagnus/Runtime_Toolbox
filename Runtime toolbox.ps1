@@ -49,6 +49,8 @@ Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All | Out-Null
 Write-Host "Net framework 3.5 installed" -f green
 choco install silverlight | Out-Null
 Write-Host "Silverlight installed" -f green
+choco install directx | Out-Null
+Write-Host "Directx 9" -f green
 
 #done/reboot 
 $REBOOT = Read-Host "Everything is installed, a reboot is suggested. Do you want to reboot now? Y=yes N=no"
