@@ -1,14 +1,15 @@
 function GenerateForm {
 
-    [reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
-    [reflection.assembly]::loadwithpartialname("System.Drawing") | Out-Null
-    
-    $form1 = New-Object System.Windows.Forms.Form
-    $button1 = New-Object System.Windows.Forms.Button
-    $listBox1 = New-Object System.Windows.Forms.ListBox
-    $checkBox1 = New-Object System.Windows.Forms.CheckBox
-    $checkBox2 = New-Object System.Windows.Forms.CheckBox
-    $checkBox3 = New-Object System.Windows.Forms.CheckBox
+[reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
+[reflection.assembly]::loadwithpartialname("System.Drawing") | Out-Null
+   
+#items 
+$form1 = New-Object System.Windows.Forms.Form
+$button1 = New-Object System.Windows.Forms.Button
+$listBox1 = New-Object System.Windows.Forms.ListBox
+$checkBox1 = New-Object System.Windows.Forms.CheckBox
+$checkBox2 = New-Object System.Windows.Forms.CheckBox
+$checkBox3 = New-Object System.Windows.Forms.CheckBox
     
    
     
@@ -32,6 +33,9 @@ $Form1 = New-Object system.Windows.Forms.Form
     $Form1.text = "Runtime Toolbox"
     $Form1.ClientSize = '450, 235'
     $Form1.FormBorderStyle = 'FixedSingle'
+
+    #Show the Form
+     $form1.ShowDialog()| Out-Null
 
 #install button
     
@@ -75,8 +79,7 @@ $form1.Controls.Add($checkBox3)
     $checkBox3.location = New-Object System.Drawing.Point(27,100)
     $checkBox3.Text = ".NET Framework 4.8"
 
-    #Show the Form
-    $form1.ShowDialog()| Out-Null
+
 }
   
 
