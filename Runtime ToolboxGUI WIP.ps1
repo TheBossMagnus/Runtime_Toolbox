@@ -50,7 +50,7 @@ Add-Type -AssemblyName System.Windows.Forms
         $VC13.location = New-Object System.Drawing.Point(27,50)
         $VC13.Text = "C++ visual 2013"
 
- #.net 4.8
+ #MSVC 2012
      $VC12 = New-Object System.Windows.Forms.CheckBox
          $form1.Controls.Add($VC12)
          $VC12.Width = 105
@@ -58,7 +58,7 @@ Add-Type -AssemblyName System.Windows.Forms
          $VC12.location = New-Object System.Drawing.Point(27,90)
          $VC12.Text = "C++ visual 2012"
 
- #.net 4.8
+ #MSVC 2010
     $VC10 = New-Object System.Windows.Forms.CheckBox
         $form1.Controls.Add($VC10)
         $VC10.Width = 105
@@ -66,7 +66,7 @@ Add-Type -AssemblyName System.Windows.Forms
         $VC10.location = New-Object System.Drawing.Point(27,130)
         $VC10.Text = "C++ visual 2010"
 
-#.net 4.8
+#MSVC 2008
     $VC8 = New-Object System.Windows.Forms.CheckBox
         $form1.Controls.Add($VC8)
         $VC8.Width = 105
@@ -74,7 +74,7 @@ Add-Type -AssemblyName System.Windows.Forms
         $VC8.location = New-Object System.Drawing.Point(27,170)
         $VC8.Text = "C++ visual 2008"
 
-#.net 4.8
+#MSVC 2005
     $VC5 = New-Object System.Windows.Forms.CheckBox
         $form1.Controls.Add($VC5)
         $VC5.Width = 105
@@ -99,7 +99,7 @@ Add-Type -AssemblyName System.Windows.Forms
         $NET48.location = New-Object System.Drawing.Point(145,50)
         $NET48.Text = ".NET Framework 4.8"
 
-#.net 4.8
+#.net 3.5
     $NET35 = New-Object System.Windows.Forms.CheckBox
         $form1.Controls.Add($NET35)
         $NET35.Width = 105
@@ -107,29 +107,29 @@ Add-Type -AssemblyName System.Windows.Forms
         $NET35.location = New-Object System.Drawing.Point(145,90)
         $NET35.Text = ".NET Framework 3.5"
 
-#.net 4.8
+#DirectX 9
     $DX = New-Object System.Windows.Forms.CheckBox
         $form1.Controls.Add($DX)
         $DX.Width = 105
         $DX.Height = 30
         $DX.location = New-Object System.Drawing.Point(145,130)
-        $DX.Text = "Lorem Ipsum"
+        $DX.Text = "Directx 9"
 
-#.net 4.8
-    $WIP = New-Object System.Windows.Forms.CheckBox
-        $form1.Controls.Add($WIP)
-        $WIP.Width = 105
-        $WIP.Height = 30
-        $WIP.location = New-Object System.Drawing.Point(145,170)
-        $WIP.Text = "Lorem Ipsum"
+#XNA
+    $XNA = New-Object System.Windows.Forms.CheckBox
+        $form1.Controls.Add($XNA)
+        $XNA.Width = 105
+        $XNA.Height = 30
+        $XNA.location = New-Object System.Drawing.Point(145,170)
+        $XNA.Text = "XNA Framework"
 
-#.net 4.8
-    $WIP = New-Object System.Windows.Forms.CheckBox
-        $form1.Controls.Add($WIP)
-        $WIP.Width = 105
-        $WIP.Height = 30
-        $WIP.location = New-Object System.Drawing.Point(145,210)
-        $WIP.Text = "Lorem Ipsum"
+#Silverlight
+    $SL = New-Object System.Windows.Forms.CheckBox
+        $form1.Controls.Add($SL)
+        $SL.Width = 105
+        $SL.Height = 30
+        $SL.location = New-Object System.Drawing.Point(145,210)
+        $SL.Text = "Sileverlight"
 
 
 
