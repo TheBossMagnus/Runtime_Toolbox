@@ -43,7 +43,7 @@ choco install javaruntime  -y | Out-Null
 Write-Host "Java 8 runtime envirorment installed" -f green
 choco install xna  -y | Out-Null
 Write-Host "XNA framework installed" -f green
-choco install netfx-4.8  -y | Out-Null
+Enable-WindowsOptionalFeature -Online -FeatureName "NetFx4-AdvSrvs" -All | Out-Null
 Write-Host ".Net framework 4.8 installed" -f green
 Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All | Out-Null
 Write-Host "Net framework 3.5 installed" -f green
