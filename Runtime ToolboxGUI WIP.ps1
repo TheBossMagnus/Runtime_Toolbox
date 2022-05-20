@@ -178,7 +178,7 @@ $handler_button_Click= {
 
     $console.Items.Add("All selected runtimes have been installed")
 
-    if (!$MSVC1522.Checked -and !$Java.Checked -and !$WIP.Checked) {$console.Items.Add("No runtime selected....")}}
+    #if (!$MSVC1522.Checked -and !$Java.Checked -and !$WIP.Checked) {$console.Items.Add("No runtime selected....")}}
 
 function Msvc20152022 {
     choco install vcredist140 -y
