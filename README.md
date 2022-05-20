@@ -24,7 +24,7 @@ iwr -useb https://raw.githubusercontent.com/THEBOSSMAGNUS/Runtime_Toolbox/main/R
   + 4.8 
   + 3.5 
 * #### Silverlight  
-* #### Directx 9(Directx 12 preinstalled with windows 10+ and not avible on choco)
+* #### Directx 9(Directx 12 comespreinstalled with windows)
 
 ### Every program is installed with Choco(Chocolatrey package menager)                                
                                              
