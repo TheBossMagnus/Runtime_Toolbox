@@ -26,7 +26,7 @@ iwr -useb https://raw.githubusercontent.com/THEBOSSMAGNUS/Runtime_Toolbox/main/R
 * #### Silverlight  
 * #### Directx 9(Directx 12 comespreinstalled with windows)
 
-### Every program is installed with Choco(Chocolatrey package menager)                                
+### .NET framework are installed with windows optional feature. Any other runtime is installed with Choco(Chocolatrey package menager)                                
                                              
    
 
