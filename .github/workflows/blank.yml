@@ -30,12 +30,3 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Compile
         run:   Invoke-ps2exe .\Runtime ToolboxGUI WIP.ps1 .\Runtime ToolboxGUI WIP.exe
-        
-       - name: Release Build
-      uses: svenstaro/upload-release-action@master
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: Runtime ToolboxGUI WIP.exe
-        tag: ${{ github.ref }}
-        overwrite: true
-        file_glob: true
