@@ -18,11 +18,11 @@
 #>
 
 #region intro
-Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Write-Host -f DarkYellow "
                                             welcome in
 ______               _    _                    _____              _  _
-| ___ \             | |  (_)                  |_   _|            | || |
+| ___ \             | |  (_)                  |_   _|            | || |N
 | |_/ /_   _  _ __  | |_  _  _ __ ___    ___    | |  ___    ___  | || |__    ___ __  __
 |    /| | | || '_ \ | __|| || '_ ` _ \  / _ \   | | / _ \  / _ \ | || '_ \  / _ \\ \/ /
 | |\ \| |_| || | | || |_ | || | | | | ||  __/   | || (_) || (_) || || |_) || (_) |>  <
@@ -41,9 +41,9 @@ Clear-Host
 Write-Host -f green "Loading..."
 if (Test-Path C:\ProgramData\chocolatey\choco.exe)
  {}
-else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"}
+else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
 while($Null -eq (get-process Chocolatey -ErrorAction SilentlyContinue))
-{ Start-Sleep -Seconds 1 }
+{ Start-Sleep -Seconds 1 }}
 Start-Sleep -Seconds 2
 #runtime install
 choco install vcredist140 -y | Out-Null
