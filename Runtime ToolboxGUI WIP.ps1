@@ -148,23 +148,22 @@ Add-Type -AssemblyName System.Windows.Forms
         $SL.Text = "Silverlight"
 
 #choco warning
-if(Test-Path C:\ProgramData\chocolatey){$choco= "true"}
+if((Test-Path C:\ProgramData\chocolatey) -ine "true"){
 
-    $Label = New-Object System.Windows.Forms.Label
-$Label.Text = "Note: Also Chocolatrey will be installed for the correct run of the process"
-$Label.AutoSize = $True
-$Label.Font = New-Object System.Drawing.Font("Segoe UI",7,[System.Drawing.FontStyle]::Bold)
-$Label.location = New-Object System.Drawing.Point(30,257)
-$Windows.Controls.Add($Label)
-
+$Label = New-Object System.Windows.Forms.Label
+    $Label.Text = "Note: Also Chocolatrey will be installed for the correct run of the process"
+    $Label.AutoSize = $True
+    $Label.Font = New-Object System.Drawing.Font("Segoe UI",7,[System.Drawing.FontStyle]::Bold)
+    $Label.location = New-Object System.Drawing.Point(30,257)
+    $Windows.Controls.Add($Label)
+}
 
 $Windows.ShowDialog() #Show the Form
 
 $handler_button_Click= {
     $console.Items.Clear();
 
-
-    if ($choco="true")    {chocoinstall}
+    if (((Test-Path C:\ProgramData\chocolatey) -ine "true"))    {chocoinstall}
 
     if ($MSVC1522.Checked)    {Msvc20152022}
 
@@ -195,11 +194,11 @@ $handler_button_Click= {
     #if (!$MSVC1522.Checked -and !$Java.Checked -and !$WIP.Checked) {$console.Items.Add("No runtime selected....")}
 }
 
-function chocoinstall {{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"}
-while($Null -eq (get-process Chocolatey -ErrorAction SilentlyContinue))
-{ Start-Sleep -Seconds 1 }
-Start-Sleep -Seconds 2
-}
+function chocoinstall {Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    while($Null -eq (get-process Chocolatey -ErrorAction SilentlyContinue))
+    { Start-Sleep -Seconds 1 }
+    Start-Sleep -Seconds 2
+    }
 
 function Msvc20152022 {
     choco install vcredist140 -y
