@@ -7,9 +7,6 @@
 	.DESCRIPTION
 	A simple and open source tool for install runtime.
 	.NOTES
-	Set execution policy if it fail to run:
-		Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-	.NOTES
 	Require admin execution
     .NOTES
     For windows 10 & 11. Require Powershell 5(preinstalled in windows 10/11) or 7
@@ -18,6 +15,9 @@
 #>
 
 #region intro
+
+# Requires -RunAsAdministrator
+#Requires -Version 5.1
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Write-Host -f DarkYellow "
                                             welcome in
