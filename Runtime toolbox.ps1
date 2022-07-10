@@ -16,8 +16,9 @@
 
 #region intro
 
-# Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 #Requires -Version 5.1
+
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Write-Host -f DarkYellow "
                                             welcome in
