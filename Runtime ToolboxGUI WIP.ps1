@@ -16,7 +16,9 @@
 	.LINK
 	https://github.com/THEBOSSMAGNUS/Runtime_Toolbox
 #>
+
 #Requires -Version 5.1
+#Requires -RunAsAdministrator
 
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
