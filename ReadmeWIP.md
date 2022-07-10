@@ -1,3 +1,15 @@
+<p align="center">
+	&bull;
+	<a href="#about-runtime-toolbox">about runtime toolbox</a>
+	&bull;
+	<a href="#how-to-use">How to use</a>
+	&bull;
+	<a href="#supported-runtime-list">Supported runtime list</a>
+	&bull;
+</p>
+
+***
+
 # About Runtime Toolbox
 
 Runtime Toolbox is a free and open-source tool to automate the most commonly used runtime installations.
@@ -5,6 +17,18 @@ Runtime Toolbox is a free and open-source tool to automate the most commonly use
 It’s coded on PowerShell and features both the GUI and script versions.
 
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" height="30px"/> &emsp; <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" height="30px"/>
+
+<p align="left">
+
+  <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/releases/latest"><img src="https://img.shields.io/github/v/release/THEBOSSMAGNUS/Runtime_Toolbox"></a>
+  <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/releases"><img src="https://img.shields.io/github/v/release/THEBOSSMAGNUS/Runtime_Toolbox?include_prereleases&label=pre-release&style=flat"></a>
+ 
+  <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/releases"><img src="https://img.shields.io/tokei/lines/github/THEBOSSMAGNUS/Runtime_Toolbox"></a>
+  <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/commits/main"><img src="https://img.shields.io/github/commit-activity/m/THEBOSSMAGNUS/Runtime_Toolbox?label=Commits&style=flat"></a>
+ 
+ <img src="https://img.shields.io/badge/PowerShell%205.1%20&%207.2-Ready-blue.svg?color=5391FE&style=flat&logo=powershell">
+</p>
 
 
 
@@ -14,7 +38,7 @@ First of all, you need to choose which versions to use.
 
 The features are the same but there are some pros and cons
 
-> personally  suggest the Gui .exe version
+> I personally  suggest the Gui .exe version
 
  
 
