@@ -1,7 +1,7 @@
 <#
 	.SYNOPSIS
-	Version: 1.4
-	Date: 20.05.2022
+	Version: Unreleased
+	Date: 26.07.2022
 	Copyright (c) 2022 THEBOSSMAGNUS
 	Under MIT license
 	.DESCRIPTION
@@ -31,43 +31,78 @@ ______               _    _                    _____              _  _
 			   This program will install all common used runtime"
 
 #chose if run y/N
-$RUN = Read-Host "I do not take any responsibilities for any damage caused by this program. Do you want to run this program? Y=yes N=no"
+$RUN = Read-Host "Continue? Y=yes N=no"
 If ($RUN -ine "Y") {exit}
 Clear-Host
 #endregion
 
 #region install
-#check if Chocolatey is intalled
-Write-Host -f green "Loading..."
-if (Test-Path C:\ProgramData\chocolatey\choco.exe)
- {}
-else{Start-Process PowerShell -WindowStyle Hidden -ArgumentList "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
-while($Null -eq (get-process Chocolatey -ErrorAction SilentlyContinue))
-{ Start-Sleep -Seconds 1 }}
-Start-Sleep -Seconds 2
+#check if Winget is intalled
+Write-Host "Checking if Winget is installed"
+
+
+if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
+    'Winget is already Installed, we are aredy to start' # installed
+}
+else {
+	Write-error "You must download and install Winget from https://apps.microsoft.com/store/detail/9NBLGGH4NNS1" 
+	Pause
+	exit
+}
+
 #runtime install
-choco install vcredist140 -y | Out-Null
-Write-Host "MSVC 2015-2022 installed" -f green
-choco install vcredist2013 -y | Out-Null
-Write-Host "MSVC 2013 installed" -f green
-choco install vcredist2012 -y | Out-Null
-Write-Host "MSVC 2012 installed" -f green
-choco install vcredist2010 -y | Out-Null
-Write-Host "MSVC 2010 installed" -f green
-choco install vcredist2008  -y | Out-Null
-Write-Host "MSVC 2008 installed" -f green
-choco install vcredist2005-y | Out-Null
-Write-Host "MSVC 2005 installed" -f green
-choco install javaruntime  -y | Out-Null
+winget install --id=Microsoft.VC++2015-2022Redist-x64 -h;
+Write-Host "MSVC 2015-2022 x64 installed" -f green
+winget install --id=Microsoft.VC++2015-2022Redist-x86 -h;
+Write-Host "MSVC 2015-2022 x86 installed" -f green
+
+winget install --id=Microsoft.VC++2013Redist-x64 -h;
+Write-Host "MSVC 2013 x64 installed" -f green
+winget install --id=Microsoft.VC++2013Redist-x86 -h;
+Write-Host "MSVC 2013 x86 installed" -f green
+
+winget install --id=Microsoft.VC++2012Redist-x64 -h;
+Write-Host "MSVC 2012 x64 installed" -f green
+winget install --id=Microsoft.VC++2012Redist-x86 -h ;
+Write-Host "MSVC 2012 x86 installed" -f green
+
+winget install --id=Microsoft.VC++2010Redist-x64 -h;
+Write-Host "MSVC 2010 x64 installed" -f green
+winget install --id=Microsoft.VC++2010Redist-x86 -h;
+Write-Host "MSVC 2010 x86 installed" -f green
+
+winget install --id=Microsoft.VC++2008Redist-x64 -h;
+Write-Host "MSVC 2008 x64 installed" -f green
+winget install --id=Microsoft.VC++2008Redist-x86 -h;
+Write-Host "MSVC 2008 x86 installed" -f green
+
+winget install --id=Microsoft.VC++2005Redist-x64 -h;
+Write-Host "MSVC 2005x64 installed" -f green
+winget install --id=Microsoft.VC++2005Redist-x86 -h;
+Write-Host "MSVC 2005x86 installed" -f green
+
+winget install --id=Oracle.JavaRuntimeEnvironment -h;
 Write-Host "Java 8 runtime envirorment installed" -f green
-Enable-WindowsOptionalFeature -Online -FeatureName "NetFx4-AdvSrvs" -All | Out-Null
-Write-Host ".Net framework 4.8 installed" -f green
-Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All | Out-Null
-Write-Host "Net framework 3.5 installed" -f green
-choco install directx -y | Out-Null
-Write-Host "Directx 9 installed" -f green
-choco install xna  -y | Out-Null
-Write-Host "XNA framework installed" -f green
-choco install silverlight -y | Out-Null
-Write-Host "Silverlight installed" -f green
+
+Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3"
+write-host ".Net Framework 3.5 installed" -f green
+
+winget install --id=Microsoft.DotNet.DesktopRuntime.6 -h;
+Write-Host ".Net desktop runtime 6 installed" -f green
+
+winget install --id=Microsoft.XNARedist -h;
+write-host "XNA framework installed" -f green
+
+winget install --id=Microsoft.PowerShell -h;
+Write-Host "PowerShell installed" -f green
+
+winget install  --id=Microsoft.DirectX -h;
+write-host "DirectX 9 installed" -f green
+
+Write-Host "
+
+
+All runtimes are been installed!" -f darkgreen
+Pause
+exit
 #endregion
