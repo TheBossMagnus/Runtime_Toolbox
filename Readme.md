@@ -49,7 +49,7 @@ The features are the same but there are some pros and cons
 | Easy to use                              | :exclamation: it's a CLI           | :white_check_mark: |
 | You can choose <br/>wich runtime install | :exclamation:need to edit the code | :white_check_mark: |
 | Automatizable                            | :white_check_mark:                 | :red_circle:       |
-| Bug                                      | shouldn't                          | sometimes          |
+| Bug                                      | shouldn't                          | There are some known isues      |
 
 ## Available Format
 
@@ -82,10 +82,9 @@ Now, from the [releases tab](https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/re
   + c++ 2005
 * Java
 *  Xna framework
-* .Net Framework
-  + 4.8 
-  + 3.5 
-*  Silverlight
-* Directx 9 (Directx 12 comes preinstalled with windows)
+* .Net Framework 3.5
+* .net 6 Desktop runtime
+* Powershell 7
+* Directx 9
 
-###### NOTE: .NET framework is installed/activated with windows optional features; everything else with [Chocolatey(choco)](https://chocolatey.org/) package menager
+###### NOTE: .NET framework 3.5 is installed/activated with windows optional features; everything else with [winget](https://docs.microsoft.com/windows/package-manager/winget/) package menager
