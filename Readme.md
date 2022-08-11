@@ -24,7 +24,6 @@ It’s coded on PowerShell and features both the GUI and script versions.
   <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/releases/latest"><img src="https://img.shields.io/github/v/release/THEBOSSMAGNUS/Runtime_Toolbox"></a>
   <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/releases"><img src="https://img.shields.io/github/v/release/THEBOSSMAGNUS/Runtime_Toolbox?include_prereleases&label=pre-release&style=flat"></a>
  
-  <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/blob/main/Runtime%20ToolboxGUI%20WIP.ps1"><img src="https://img.shields.io/tokei/lines/github/THEBOSSMAGNUS/Runtime_Toolbox"></a>
   <a href="https://github.com/THEBOSSMAGNUS/Runtime_Toolbox/commits/main"><img src="https://img.shields.io/github/commit-activity/m/THEBOSSMAGNUS/Runtime_Toolbox?label=Commits&style=flat"></a>
  
  <img src="https://img.shields.io/badge/PowerShell%205.1%20&%207.2-Ready-blue.svg?color=5391FE&style=flat&logo=powershell">
